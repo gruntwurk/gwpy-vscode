@@ -9,7 +9,10 @@
         "name": "Craig Jones <craig@k6nnl.com>"
     }
     "license": "MIT",
-    "homepage": "https://github.com/gruntwurk/python-snippets",
+        "extensionKind": [
+        "workspace"
+    ],
+"homepage": "https://github.com/gruntwurk/gruntwurk-python",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -20,7 +23,9 @@
 	],
     "keywords": [
         "snippets",
-        "python"
+        "python",
+        "pytest",
+        "unittest"
     ],
     "repository": {
 	    "type": "git",
@@ -42,8 +47,15 @@
 			"type": "object",
 			"title": "gruntwurk-python configuration",
 			"properties": {
-				"gruntwurk-python": {}
-			}
+				"gruntwurk-python.unittestDialect": {}
+                    "type": "string",
+                    "default": "pytest",
+                    "enum": [
+                        "pytest",
+                        "unittest"
+                    ],
+                    "description": "Which unit-testing style to use."
+                },
 		},
 		"commands": [
 			{
@@ -72,7 +84,24 @@
 				"category": "Python"
 			}
 		],
-        "snippets": [{
+                "keybindings": [
+            {
+                "command": "gruntwurk-python.transformSnakeCamel",
+                "key": "ctrl+K,ctrl+S",
+                "mac": "cmd+K,cmd+S",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceLangId == python",
+                    "command": "gruntwurk-python.transformSnakeCamel",
+                    "group": "1_modification"
+                }
+            ]
+        },
+"snippets": [{
                 "language": "python",
                 "path": "./snippets/base.json"
             },
