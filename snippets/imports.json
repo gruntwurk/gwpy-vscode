@@ -1,0 +1,67 @@
+{
+    "#!/usr/bin/env python": {
+        "prefix": "env",
+        "body": "#!/usr/bin/env python\n$0",
+        "description": "Adds shebang line for default python interpreter."
+    },
+    "#!/usr/bin/env python3": {
+        "prefix": "env3",
+        "body": "#!/usr/bin/env python3\n$0",
+        "description": "Adds shebang line for default python 3 interpreter."
+    },
+    "# -*- coding=utf-8 -*-": {
+        "prefix": "enc",
+        "body": "# -*- coding=utf-8 -*-\n$0",
+        "description": "set default python2.x encoding specification to utf-8 as it is mentioned in pep-0263."
+    },
+    "# coding=utf-8": {
+        "prefix": "enco",
+        "body": "# coding=utf-8\n$0",
+        "description": "Set default python3 encoding specification to utf-8, by default this is the encoding for python3.x as it is mentioned in pep-3120."
+    },
+    "from future import ...": {
+        "prefix": "fenc",
+        "body": [
+            "# -*- coding: utf-8 -*-",
+            "from __future__ import absolute_import, division, print_function, unicode_literals"
+        ],
+        "description": "Import future statement definitions for python2.x scripts using utf-8 as encoding."
+    },
+    "from future import ... v1": {
+        "prefix": "fenco",
+        "body": [
+            "# coding: utf-8",
+            "from __future__ import absolute_import, division, print_function, unicode_literals"
+        ],
+        "description": "Import future statement definitions for python3.x scripts using utf-8 as encoding."
+    },
+    "import": {
+        "prefix": "im",
+        "body": "import ${1:package/module}$0",
+        "description": "Import an entire package or module."
+    },
+    "from ... import ...": {
+        "prefix": "fim",
+        "body": "from ${1:package/module} import ${2:names}$0",
+        "description": "Import specific elements from a package or module."
+    },
+    "__all__": {
+        "prefix": "all",
+        "body": [
+            "__all__ = [",
+            "\t\"${1:method}\",",
+            "]"
+        ],
+        "description": "Declare which objects correspond to 'import *'."
+    },
+    "package comment": {
+        "prefix": "pkgcomment",
+        "body": [
+            "# The existence of this file makes this subfolder a \"package\"",
+            "\"\"\"",
+            "This package contains $0.",
+            "\"\"\""
+        ],
+        "description": "Comment for the top of the __init__.py file that makes the module a package."
+    }
+}

@@ -1,0 +1,141 @@
+= gruntwurk-python: Python Developer Tools for VS Code
+
+== Introduction
+
+A VS Code extension with special tools for working with Python, including:
+
+* Some commands that perform lightweight Python refactoring actions
+* Commands that make writing unit tests easier and faster
+* A few general-purpose commands that help with Python, even though they are not Python-specific
+* A collection of 80 Python-related snippets
+
+
+
+
+== The Python-Specific Commands
+
+* *transformSnakeCamel* --
+A multi-select friendly command to toggle between CamelCase and snake_case.
+If any particular selection is empty (just a cursor), this will automatically expand it to the whole word first.
+
+* *pytestForFunction* --
+Given a Python function signature, creates a corresponding unit test (pytest flavor) in a corresponding source code file under the tests folder.
+(Assumes that the line under the cursor is the signature in question.)
+
+* *callForFunction* --
+Similarly, given a Python function signature, creates a corresponding call.
+Knows that if the first argument is self, then make it a method call.
+This time, the generated code is merely placed into the clipboard.
+
+
+
+== The General-Purpose Commands
+
+* *listBuiltinCommands* --
+This fetches a list of all registered commands that do not take any arguments
+(which means they can be assigned keyboard shortcuts.)
+The list is inserted into a new file that you can edit/save.
+
+* *unMultiSelectLast* --
+For when you Ctrl-Click to multiselect 10 times and on the eleventh get it wrong.
+Just press Ctrl-0 (or whatever key you assign) to unselect the eleventh, then carry on.
+
+
+
+== The Snippets
+
+This extension puts over *80 Python-related snippets* at your fingertips to *increase your productivity* (as opposed to many snippet collections that are aimed at users who are just learning Python).
+
+These snippets are divided into various categories:
+
+* *base Python*
+* *comprehensions*
+* *console apps* (command line interface)
+* *error handling* (try-except, etc.)
+* *debugging and logging*
+* *imports and shebangs*
+* *unit testing* (asserts)
+
+See the link:docs\CHEAT_SHEET.adoc["cheat sheet"] for a listing of all snippets (by category and by abbreviation).
+
+
+
+== Installation
+
+Ways to install the gruntwurk-python extension:
+
+*Method 1:* Install the latest stable build via the marketplace (not yet).
+
+*Method 2:* Downloaded the `.vsix` file that corresponds to the build you wish to use, then:
+`code --install-extension gruntwurk-python-0.1.5.vsix`
+
+
+
+== Extension Settings
+
+TBD
+
+Next, open your VS Code settings.json and create a new `gruntwurk-python` section...
+
+. Click on the gear-icon (lower left).
+. Select "`Settings.`"
+. Press the open-settings icon in the top right corner.
+(It used to look like {}, but now it looks like a dog-eared page with a wrap-around arrow.)
+. More TBD
+
+
+
+
+
+
+
+
+
+== History
+
+This snippet collection is loosely based on a fork of cstrap/python-snippets, which initially ported snippets from PyCharm, TextMate, SublimeText and other editors/IDEs.
+
+. We deleted the Tkinter snippets (since we're a Kivy shop), but we're not replacing them with Kivy snippets since we want to keep this collection general-purpose.
+. We changed this README file from Markdown to AsciiDoc (since we're an AsciiDoc shop).
+. We removed the static list of snippets from this README file. Instead...
+. We added a Python script to automatically generate a link:docs\CHEAT_SHEET.adoc["cheat sheet"] document page. It lists the snippets by category as well as alphabetically by abbreviation.
+
+
+
+
+== Release Notes
+
+See link:CHANGELOG.adoc[changelog] for all changes and releases.
+
+
+
+== Contributing
+
+If you'd like to contribute, feel free to https://github.com/gruntwurk/vscode-python[submit a pull request on github].
+
+You should find this helpful: link:docs_technical/DEVELOPMENT_NOTES.adoc[].
+
+
+
+
+
+== Known Issues
+
+See https://github.com/gruntwurk/vscode-python/issues[]
+
+
+
+== Release Notes
+
+See https://github.com/gruntwurk/vscode-python/issues[]
+link:docs/CHANGELOG.adoc[].
+
+
+=== 0.0.1 (Alpha test)
+
+TBD
+
+== Troubleshooting
+
+If you experience problems with the auto-formatting of certain snippets, make sure you have the option `editor.tabCompletion` set on `onlySnippets` or `on`.
+

@@ -1,0 +1,63 @@
+{
+    "LOG declaration": {
+        "prefix": "logdecl",
+        "body": [
+        "import logging",
+        "",
+        "LOG = logging.getLogger(\"main\")",
+        ""
+        ],
+        "description": "get the logger"
+    },
+    "LOG.trace": {
+        "prefix":"logt",
+        "body":[
+            "LOG.debug(\"Trace: ${Killroy was here}\")"
+        ],
+        "description": "LOG.debug with a generic trace message"
+    },
+    "LOG.debug": {
+        "prefix":"logd",
+        "body":[
+            "LOG.debug(\"$1 = {}\".format(${1:variable}))"
+        ],
+        "description": "LOG.debug"
+    },
+    "LOG.info": {
+        "prefix":"logi",
+        "body":[
+            "LOG.info(\"$1 = {}\".format(${1:variable}))"
+        ],
+        "description": "LOG.info"
+    },
+    "LOG.warn": {
+        "prefix":"logw",
+        "body":[
+            "LOG.warning(\"{}\".format($0))"
+        ],
+        "description": "LOG.warn"
+    },
+    "LOG.error": {
+        "prefix":"loge",
+        "body":[
+            "LOG.error(\"{}\".format($0))"
+        ],
+        "description": "LOG.error"
+    },
+    "PDB set trace": {
+        "prefix": "pdb",
+        "body": "import pdb; pdb.set_trace()"
+    },
+    "iPDB set trace": {
+        "prefix": "ipdb",
+        "body": "import ipdb; ipdb.set_trace()"
+    },
+    "rPDB set trace": {
+        "prefix": "rpdb",
+        "body": "import rpdb2; rpdb2.start_embedded_debugger('${1:debug_password}')"
+    },
+    "IPython set trace": {
+        "prefix": "ipydb",
+        "body": "from IPython import embed; embed()"
+    }
+}

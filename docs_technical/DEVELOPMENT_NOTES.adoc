@@ -1,0 +1,62 @@
+= Development Notes
+
+
+
+== What's in the project folder
+
+* `package.json` -- The manifest file that declares the extension aspects
+* `src/extension.ts` -- The extension's main file (with the `activate` function)
+* `src/utils.ts` -- Utility code that has nothing to do with VSCode, per se..
+* `src/python_tools.ts` -- Utility code that is related to Python (but nothing to do with VS Code)
+* `src/vs_tools.ts` -- Utility functions for working with VS Code
+// * `src/mutex.ts` -- For forcing async code to sync
+* `snippets/*.json` -- The snippet definitions (as listed in the manifest)
+* `tools/create_cheat_sheet.py` -- Used to regenerate docs/CHEAT_SHEET.adoc
+* `docs/*.adoc` -- user documentation (for the Python developer who wants to take advantage of this extension)
+* `docs_technical/*.adoc` -- developer documentation (for working on this VS Code extension itself)
+
+
+
+
+== Taking This (or any) Extension Out for a Spin
+
+Be in VSCode with the package.json file open in the editor.
+Press `F5` to open a new Code window with the extension loaded. 
+(We'll call the original copy of VSCode the _dev_ window.
+We'll call the spawned copy of VSCode the _trial_ window.)
+
+* The extension runs in debug mode, so setting breakpoints, etc. works fine.
+* `console.log()` and `console.error()` output goes to the "debug console" (in the _dev_ window).
+* A debugging toolbar pops up (_dev_ window). For one thing, you can relaunch the extension from the debug toolbar after changing any source code.
+* You can also use the reload command (`Ctrl+R`; trial window) to reload the extension.
+
+
+
+
+== Running tests
+
+* For this project, we're using `Jest` for the automated tests.
+* Tests are located in the `tests` folder.
+
+
+
+== Publishing
+
+. Check for any open pull requests and/or uncharacterized issues.
+. Bump the version number in `package.json`
+. If you added or changed any snippets, then regenerate the cheat sheet:
+.. Be in the root directory.
+.. `tools/create_cheat_sheet.py > docs/CHEAT_SHEET.adoc`
+. Install the latest version of `vsce` (`npm install -g vsce`).
+** Use `vsce package` to generate a `.vsix` file.
+** Use `vsce publish` to publish the `.vsix` file to the marketplace -- Alternatively, just distribute the `.vsix` file locally.
+
+To install the .vsix file manually: `code --install-extension gruntwurk-python-0.1.5.vsix`
+-- That will unarchive it into (home)/.vscode/extensions (%USERPROFILE%\.vscode\extensions)
+
+
+
+== Further Reading
+
+https://code.visualstudio.com/api/working-with-extensions/publishing-extension[Publish the extension] on the VSCode extension marketplace.
+
