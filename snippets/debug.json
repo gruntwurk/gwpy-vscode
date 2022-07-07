@@ -12,9 +12,9 @@
     "LOG.trace": {
         "prefix":"logt",
         "body":[
-            "LOG.debug(\"Trace: ${Killroy was here}\")"
+            "LOG.trace(\"${1:Killroy was here}\")"
         ],
-        "description": "LOG.debug with a generic trace message"
+        "description": "LOG.trace"
     },
     "LOG.debug": {
         "prefix":"logd",

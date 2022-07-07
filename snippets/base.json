@@ -38,7 +38,7 @@
             "@dataclass # option defaults: init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False",
             "class ${1:ClassName}(${2:BaseClass}):",
             "\t\"\"\"${1/(.*)/${1:/downcase}/}\"\"\"",
-            "\t${4:property}: ${type}"
+            "\t${4:property}: ${5:type}"
         ],
         "description": "A dataclass definition."
     },
@@ -95,7 +95,7 @@
         "body": [
             "for ${1:index}, ${2:element} in enumerate(${3:list}):",
             "\t# LOG.debug(\"Processing {} of {}\".format($1,len($3)))",
-            "\t${do_something_with}($2)\n"
+            "\t${4:do_something_with}($2)\n"
         ],
         "description": "For each item in a list with index (enumerate)"
     },
@@ -177,7 +177,7 @@
     "dircurrent": {
         "prefix": "dircurrent",
         "body": ["from pathlib import Path",
-            "${data_path} = Path.cwd() / \"${subfolder_of_interest}\""],
+            "${1:data_path} = Path.cwd() / \"${2:subfolder_of_interest}\""],
             "description": "Get the path of the current directory (via pathlib)."
     },
     "print": {
@@ -194,7 +194,7 @@
         "prefix": "datemath",
         "body": [
             "${1:term} = timedelta(days=30 if monthly else 365)",
-            "${expiry_date} = ${date_issued} + $1"
+            "${2:expiry_date} = ${3:date_issued} + $1"
         ],
         "description": "Date math using timedelta."
     },
@@ -224,24 +224,24 @@
         "body": [
             "m = re.${1|search,match,fullmatch|}(r\"${2:pattern}\", ${3:text_str}, flags=re.MULTILINE + re.IGNORECASE)",
             "if m:",
-            "\t${group1} = m.group(1)",
-            "\t${group2} = m.group(2)\n"
+            "\t${4:group1} = m.group(1)",
+            "\t${5:group2} = m.group(2)\n"
         ],
         "description": "Regular expression search (anywhere within), match (at start), or fullmatch."
     },
     "regular expression replace": {
         "prefix": "regexreplace",
         "body": [
-            "${1:text_str} = re.sub(r\"${pattern}\", \"${replacement}\", $1, flags=re.MULTILINE + re.IGNORECASE)"
+            "${1:text_str} = re.sub(r\"${2:pattern}\", \"${3:replacement}\", $1, flags=re.MULTILINE + re.IGNORECASE)"
         ],
         "description": "Regular expression replace."
     },
     "regular expression findall": {
         "prefix": "regexfindall",
         "body": [
-            "${1:list_of_tuples} = re.findall(\"${pattern}\", ${text_str}, flags=re.MULTILINE + re.IGNORECASE)",
+            "${1:list_of_tuples} = re.findall(\"${2:pattern}\", ${3:text_str}, flags=re.MULTILINE + re.IGNORECASE)",
             "for tup in $1:",
-            "\t${group1}, ${group2} = tup"
+            "\t${4:group1}, ${5:group2} = tup"
         ],
         "description": "Regular expression findall."
     },
@@ -250,8 +250,8 @@
         "body": [
             "with Path(${1:qualified_filename}).open(\"${2:|r,w,a,x,+|}${3:|b,t|}\") as f:",
             "\tif f.${4:|readable,writeable,seekable|}():",
-            "\t\t${5:result} = f.${6:|read,readall,readline,readlines,writelines|}(${arguments})",
-            "\t\t# file is automatically closed when with clause exits"
+            "\t\t${5:result} = f.${6:|read,readall,readline,readlines,writelines|}(${6:arguments})",
+            "\t\t# file is automatically closed when `with` clause exits"
         ],
         "description": "File IO (read/write)"
     },

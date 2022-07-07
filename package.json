@@ -4,15 +4,15 @@
 	"description": "Some Python programming tools.",
 	"version": "0.1.5",
 	"publisher": "gruntwurk",
-    "icon": "images/python.png",
-    "author": {
-        "name": "Craig Jones <craig@k6nnl.com>"
-    }
-    "license": "MIT",
-        "extensionKind": [
-        "workspace"
-    ],
-"homepage": "https://github.com/gruntwurk/gruntwurk-python",
+	"icon": "images/python.png",
+	"author": {
+		"name": "Craig Jones <craig@k6nnl.com>"
+	},
+	"license": "MIT",
+	"extensionKind": [
+		"workspace"
+	],
+	"homepage": "https://github.com/gruntwurk/gruntwurk-python",
 	"engines": {
 		"vscode": "^1.47.0"
 	},
@@ -21,18 +21,18 @@
 		"Snippets",
 		"Testing"
 	],
-    "keywords": [
-        "snippets",
-        "python",
-        "pytest",
-        "unittest"
-    ],
-    "repository": {
-	    "type": "git",
-	    "url": "https://github.com/gruntwurk/vscode-python.git"
-    },
-    "bugs": {
-        "url": "https://github.com/gruntwurk/vscode-python/issues"
+	"keywords": [
+		"snippets",
+		"python",
+		"pytest",
+		"unittest"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gruntwurk/vscode-python.git"
+	},
+	"bugs": {
+		"url": "https://github.com/gruntwurk/vscode-python/issues"
 	},
 	"activationEvents": [
 		"onCommand:gruntwurk-python.callForFunction",
@@ -47,15 +47,16 @@
 			"type": "object",
 			"title": "gruntwurk-python configuration",
 			"properties": {
-				"gruntwurk-python.unittestDialect": {}
-                    "type": "string",
-                    "default": "pytest",
-                    "enum": [
-                        "pytest",
-                        "unittest"
-                    ],
-                    "description": "Which unit-testing style to use."
-                },
+				"gruntwurk-python.unittestDialect": {
+					"type": "string",
+					"default": "pytest",
+					"enum": [
+						"pytest",
+						"unittest"
+					],
+					"description": "Which unit-testing style to use."
+				}
+			}
 		},
 		"commands": [
 			{
@@ -84,52 +85,53 @@
 				"category": "Python"
 			}
 		],
-                "keybindings": [
-            {
-                "command": "gruntwurk-python.transformSnakeCamel",
-                "key": "ctrl+K,ctrl+S",
-                "mac": "cmd+K,cmd+S",
-                "when": "editorTextFocus"
-            }
-        ],
-        "menus": {
-            "editor/context": [
-                {
-                    "when": "resourceLangId == python",
-                    "command": "gruntwurk-python.transformSnakeCamel",
-                    "group": "1_modification"
-                }
-            ]
-        },
-"snippets": [{
-                "language": "python",
-                "path": "./snippets/base.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/cli.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/comprehension.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/debug.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/error_handling.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/imports.json"
-            },
-            {
-                "language": "python",
-                "path": "./snippets/unittest.json"
-            }
-        ]
+		"keybindings": [
+			{
+				"command": "gruntwurk-python.transformSnakeCamel",
+				"key": "ctrl+K,ctrl+S",
+				"mac": "cmd+K,cmd+S",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "resourceLangId == python",
+					"command": "gruntwurk-python.transformSnakeCamel",
+					"group": "1_modification"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/base.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/cli.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/comprehension.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/debug.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/error_handling.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/imports.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/unittest.json"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
