@@ -29,10 +29,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/gruntwurk/vscode-python.git"
+		"url": "https://github.com/gruntwurk/gwpy-vscode.git"
 	},
 	"bugs": {
-		"url": "https://github.com/gruntwurk/vscode-python/issues"
+		"url": "https://github.com/gruntwurk/gwpy-vscode/issues"
 	},
 	"activationEvents": [
 		"onCommand:gruntwurk-python.callForFunction",
@@ -130,6 +130,10 @@
 			{
 				"language": "python",
 				"path": "./snippets/unittest.json"
+			},
+			{
+				"language": "python",
+				"path": "./snippets/gwpykivy.json"
 			}
 		]
 	},

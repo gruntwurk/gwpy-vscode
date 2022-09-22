@@ -79,5 +79,14 @@
             "\t$0"
         ],
         "description": "Progress bar (for a console app)."
+    },
+    "CmdConfig": {
+        "prefix": "config",
+        "body": [
+            "from gwpycore import GlobalSettings",
+            "CONFIG = GlobalSettings()",
+            "\t$0"
+        ],
+        "description": "CONFIG = GlobalSettings()"
     }
 }

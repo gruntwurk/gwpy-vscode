@@ -19,28 +19,28 @@
     "LOG.debug": {
         "prefix":"logd",
         "body":[
-            "LOG.debug(\"$1 = {}\".format(${1:variable}))"
+            "LOG.debug(f\"{$1} = {${1:variable}}\""
         ],
         "description": "LOG.debug"
     },
     "LOG.info": {
         "prefix":"logi",
         "body":[
-            "LOG.info(\"$1 = {}\".format(${1:variable}))"
+            "LOG.info(f\"{$1} = {${1:variable}}\""
         ],
         "description": "LOG.info"
     },
     "LOG.warn": {
         "prefix":"logw",
         "body":[
-            "LOG.warning(\"{}\".format($0))"
+            "LOG.warning(\"f{$0}\""
         ],
         "description": "LOG.warn"
     },
     "LOG.error": {
         "prefix":"loge",
         "body":[
-            "LOG.error(\"{}\".format($0))"
+            "LOG.error(\"f{$0}\""
         ],
         "description": "LOG.error"
     },

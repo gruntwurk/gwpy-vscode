@@ -1,14 +1,15 @@
-= gruntwurk-python: Python Developer Tools for VS Code
+= gwpy-vscode: Python Developer Tools for VS Code by GruntWurk
 
 == Introduction
 
-A VS Code extension with special tools for working with Python, including:
+A *Visual Studio Code* extension with special tools for working with *Python*, including:
 
-* Some commands that perform lightweight Python refactoring actions
-* Commands that make writing unit tests easier and faster
-* A few general-purpose commands that help with Python, even though they are not Python-specific
-* A collection of 80 Python-related snippets
+* Some commands that perform *lightweight Python refactoring* actions
+* Commands that make writing *unit tests* easier and faster
+* A few general-purpose (non Python-specific) commands
+* A collection of *80 Python-related snippets*
 
+Most of these tools and snippets are intended for general-purpose Python work, but a few are specific for taking better advantage of our `gwpycore` library.
 
 
 
@@ -111,7 +112,7 @@ See link:CHANGELOG.adoc[changelog] for all changes and releases.
 
 == Contributing
 
-If you'd like to contribute, feel free to https://github.com/gruntwurk/vscode-python[submit a pull request on github].
+If you'd like to contribute, feel free to https://github.com/gruntwurk/gwpy-vscode[submit a pull request on github].
 
 You should find this helpful: link:docs_technical/DEVELOPMENT_NOTES.adoc[].
 
@@ -121,13 +122,13 @@ You should find this helpful: link:docs_technical/DEVELOPMENT_NOTES.adoc[].
 
 == Known Issues
 
-See https://github.com/gruntwurk/vscode-python/issues[]
+See https://github.com/gruntwurk/gwpy-vscode/issues[]
 
 
 
 == Release Notes
 
-See https://github.com/gruntwurk/vscode-python/issues[]
+See https://github.com/gruntwurk/gwpy-vscode/issues[]
 link:docs/CHANGELOG.adoc[].
 
 

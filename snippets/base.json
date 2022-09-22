@@ -45,19 +45,32 @@
     "enum class": {
         "prefix": "enum",
         "body": [
-            "from enum import Enum, IntEnum",
+            "from enum import Enum, IntEnum, unique",
+            "",
             "@unique",
             "class ${1:ClassName}(Enum):",
             "    ${2} = '${2:member}'",
             "    ${3} = '${3:member}'",
             "    $0",
             "",
+            "    def is_${4:subset}(self):",
+            "        return self in [$1.$2, $1.$3]",
+            "",
             "    @classmethod",
-            "    def possibleValues(cls) -> str:",
+            "    def possible_values(cls) -> str:",
             "        return ', '.join([e.name for e in cls])",
             "",
-            "    def ${4:permission}_is_allowed(self):",
-            "        return self in [$1.$2, $1.$3]"
+            "    @classmethod",
+            "    def by_value(cls, value):",
+            "        for e in cls:",
+            "            if e.value == value:",
+            "                return e",
+            "        raise ValueError(f'No such ${1} as {value}')",
+            "",
+            "    @classmethod",
+            "    def default_enum(cls):",
+            "        return cls.${2}"
+
         ],
         "description": "enum definition."
     },
